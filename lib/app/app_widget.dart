@@ -1,4 +1,5 @@
 import 'package:adf_todo_list_provider/app/core/database/sqlite_adm_connection.dart';
+import 'package:adf_todo_list_provider/app/modules/auth/auth_module.dart';
 import 'package:adf_todo_list_provider/app/modules/splash/splash_page.dart';
 import 'package:flutter/material.dart';
 
@@ -26,10 +27,14 @@ class _AppWidgetState extends State<AppWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
+      initialRoute: '/login',
       title: 'Todo List com Provider',
-      home: SplashPage(),
+      routes: {
+        ...AuthModule().routers,
+      },
+      home: const SplashPage(),
     );
   }
 }

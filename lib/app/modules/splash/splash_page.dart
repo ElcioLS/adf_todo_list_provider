@@ -9,7 +9,12 @@ class SplashPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Todo List com Provider'),
       ),
-      body: Container(),
+      body: Center(
+        child: TextButton(
+          onPressed: () => Navigator.of(context).pushNamed('/login'),
+          child: const Text('Login'),
+        ),
+      ),
     );
   }
 }
