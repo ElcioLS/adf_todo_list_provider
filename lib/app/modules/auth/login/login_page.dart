@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  LoginPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,27 +21,27 @@ class LoginPage extends StatelessWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const SizedBox(height: 10),
-                    const TodoListLogo(),
+                    SizedBox(height: 10),
+                    TodoListLogo(),
                     Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 40, vertical: 20),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 40, vertical: 20),
                       child: Form(
                         child: Column(
                           children: [
                             TodoListField(label: 'E-mail'),
-                            const SizedBox(height: 20),
+                            SizedBox(height: 20),
                             TodoListField(
                               label: 'Senha',
                               obscureText: true,
                             ),
-                            const SizedBox(height: 10),
+                            SizedBox(height: 10),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 TextButton(
                                   onPressed: () {},
-                                  child: const Padding(
+                                  child: Padding(
                                     padding: EdgeInsets.all(10.0),
                                     child: Text('Esqueceu sua senha?'),
                                   ),
@@ -52,7 +52,7 @@ class LoginPage extends StatelessWidget {
                                       shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(20),
                                   )),
-                                  child: const Text('Login'),
+                                  child: Text('Login'),
                                 ),
                               ],
                             )
@@ -60,11 +60,11 @@ class LoginPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const SizedBox(height: 20),
+                    SizedBox(height: 20),
                     Expanded(
                       child: Container(
                         decoration: BoxDecoration(
-                          color: const Color(0xddF0F3F7),
+                          color: Color(0xddF0F3F7),
                           border: Border(
                             top: BorderSide(
                               width: 2,
@@ -72,33 +72,35 @@ class LoginPage extends StatelessWidget {
                             ),
                           ),
                         ),
-                        child: Column(
-                          children: [
-                            const SizedBox(height: 30),
-                            SignInButton(
-                              Buttons.Google,
-                              text: 'Continue com o Google',
-                              padding: const EdgeInsets.all(5),
-                              shape: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(30),
-                                borderSide: BorderSide.none,
+                        child: SingleChildScrollView(
+                          child: Column(
+                            children: [
+                              SizedBox(height: 30),
+                              SignInButton(
+                                Buttons.Google,
+                                text: 'Continue com o Google',
+                                padding: EdgeInsets.all(5),
+                                shape: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(30),
+                                  borderSide: BorderSide.none,
+                                ),
+                                onPressed: () {},
                               ),
-                              onPressed: () {},
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const Text('Não tem conta?'),
-                                TextButton(
-                                  onPressed: () {
-                                    Navigator.of(context)
-                                        .pushNamed('/register');
-                                  },
-                                  child: const Text('Cadastre-se'),
-                                )
-                              ],
-                            )
-                          ],
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text('Não tem conta?'),
+                                  TextButton(
+                                    onPressed: () {
+                                      Navigator.of(context)
+                                          .pushNamed('/register');
+                                    },
+                                    child: Text('Cadastre-se'),
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
                         ),
                       ),
                     ),
